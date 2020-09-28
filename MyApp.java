@@ -8,38 +8,26 @@ import java.util.*;
  */
 public class MyApp
 {
-    public static Integer[] makeToken(String data)
-    {
-        Integer[] array = new Integer[3];
-        StringTokenizer st = new StringTokenizer(data, "/");
-        int i = 0;       
-        while(st.hasMoreTokens())
-        {
-            array[i] = Integer.valueOf(st.nextToken());
-            i++;
-        }  
-        return array;
-    }
-    
-    public static void main (String[] args)
-    {
+    public static void main(String[] args){
         Stack<Integer> stack = new MyStack<Integer>();
-        Scanner scanner = new Scanner(System.in); 
         
-        System.out.print("오늘 날짜를 입력하시오(년/월/일) : ");
-        String data = scanner.next();
-        Integer[] array = makeToken(data);
+        System.out.print("오늘의 날짜를 입력하시오(년/월/일) : ");
         
-        System.out.println("------ Push ------");
+        Scanner scanner = new Scanner(System.in);
+        String date = scanner.next();
         
-        for(int i=0; i<3; i++)
-            stack.push(array[i]);
+        StringTokenizer st = new StringTokenizer(date, "/");
         
-        System.out.println("------ Pop ------");
-        while(true)
-        {
-            
+        System.out.println("------Push------");
+        while(st.hasMoreTokens()){
+            Integer i = Integer.valueOf(st.nextToken());
+            stack.push(i);
+            System.out.println(i);
         }
         
+        System.out.println("------Pop------");
+        for(int i = 0; i < 4 ; i ++){
+            System.out.println(stack.pop());
+        }
     }
 }

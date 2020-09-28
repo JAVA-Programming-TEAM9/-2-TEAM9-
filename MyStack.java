@@ -8,22 +8,30 @@ import java.util.*;
  */
 public class MyStack<T> implements Stack<T>
 {
-    ArrayList<T> li = new ArrayList<T>();
+    private int top;
+    ArrayList<T> s;
+    
+    public MyStack(){
+        top = -1;
+        s = new ArrayList<T>();
+    }
     
     @Override
     public T pop(){
-        if (li.size() == 0){
+        if (top < 0){
             System.out.println("Stack underflow!");
             return null;
         }
         else{
-            return li.remove(0);
+            T result = (T)s.get(top);
+            top -= 1;
+            return result;
         }
     }
     
     @Override
     public boolean push(T obj){
-        li.add(0, obj);
-        return true;
+        top += 1;
+        return s.add(obj);
     }
 }
