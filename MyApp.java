@@ -10,16 +10,10 @@ public class MyApp
 {
     public static void main (String[] args)
     {
-        Stack<Integer> stack = new MyStack<Integer>();
+        //Stack<Integer> stack = new MyStack<Integer>();
         Scanner scanner = new Scanner(System.in);
-        StringTokenizer st = new StringTokenizer
         
-        while(true)
-        {
-            System.out.print("오늘 날짜를 입력하시오(년/월/일) : ");
-            day = scanner.nextLine();
-            
-        }
+      
         
     }
 }
